@@ -7,22 +7,22 @@
       {{ item.title }} {{ "(" + item.url + ")" }}
         <a ng-click="findLinkByID(item.id).upvote()">upvote </a>
         {{ item.upvotesCount }}
-        <!-- <a ng-click="findLinkByID(item.id).upvote()">upvote </a> -->
+        <a ng-click="deleteLink(item)">delete</a>
     </li>
   </ul>
 </div>
 
 <div class "col-md-4">
   <h3>Add a new link</h3>
-  <form ng-submit="LinksFactory.addLink()" class="form-inline" role="form">
+  <form ng-submit="addLink()" class="form-inline" role="form">
     <div class="form-group">
       <label for="link-title">Title: </label>
-      <input id="link-title" type="text" ng-model="LinksFactory.linkTitle"
+      <input id="link-title" type="text" ng-model="linkTitle"
         class="form-control" placeholder="Enter a link title" />
     </div>
     <div class="form-group">
       <label for="link-url">Title: </label>
-      <input id="link-url" type="text" ng-model="LinksFactory.linkURL"
+      <input id="link-url" type="text" ng-model="linkURL"
         class="form-control" placeholder="Enter a link URL" />
     </div>
     <button type="submit" class="btn btn-success">Add</button>

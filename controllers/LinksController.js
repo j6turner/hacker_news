@@ -11,4 +11,23 @@ hackerNews.controller("LinksCtrl",
     }
     return null;
   };
+
+  $scope.addLink = function() {
+    $scope.links.push({
+      title: $scope.linkTitle,
+      url: $scope.linkURL,
+      id: $scope.links.length + 1,
+      upvotesCount: 0,
+      upvote: function() { ++(this.upvotesCount); },
+      comments: []
+    });
+
+    $scope.linkTitle = null;
+    $scope.linkURL = null;
+  };
+
+  $scope.deleteLink = function(link) {
+    var index = $scope.links.indexOf(link);
+    $scope.links.splice(index, 1);
+  };
 });
