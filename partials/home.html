@@ -5,8 +5,9 @@
   <ul>
     <li ng-repeat="item in links">
       {{ item.title }} {{ "(" + item.url + ")" }}
-        <a ng-click="LinksFactory.findLinkByID(item.id).upvote()">upvote</a>
+        <a ng-click="findLinkByID(item.id).upvote()">upvote </a>
         {{ item.upvotesCount }}
+        <!-- <a ng-click="findLinkByID(item.id).upvote()">upvote </a> -->
     </li>
   </ul>
 </div>
