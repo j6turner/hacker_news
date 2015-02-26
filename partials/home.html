@@ -2,16 +2,16 @@
 
 <div class "col-md-4">
   <h3>Add a new link</h3>
-  <form ng-submit="" class="form-inline" role="form">
+  <form ng-submit="LinksFactory.addLink()" class="form-inline" role="form">
     <div class="form-group">
       <label for="link-title">Title: </label>
-      <input id="link-title" type="text" ng-model="" class="form-control"
-        placeholder="Enter a link title" />
+      <input id="link-title" type="text" ng-model="LinksFactory.linkTitle"
+        class="form-control" placeholder="Enter a link title" />
     </div>
     <div class="form-group">
       <label for="link-url">Title: </label>
-      <input id="link-url" type="text" ng-model="" class="form-control"
-      placeholder="Enter a link URL" />
+      <input id="link-url" type="text" ng-model="LinksFactory.linkURL"
+        class="form-control" placeholder="Enter a link URL" />
     </div>
     <button type="submit" class="btn btn-success">Add</button>
   </form>
