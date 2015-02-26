@@ -4,7 +4,9 @@
   <h3>All Links (ranked by score)</h3>
   <ul>
     <li ng-repeat="item in links">
-      {{ item.title }} {{ "(" + item.url + ")" }} Upvote 
+      {{ item.title }} {{ "(" + item.url + ")" }}
+        <a ng-click="LinksFactory.findLinkByID(item.id).upvote()">upvote</a>
+        {{ item.upvotesCount }}
     </li>
   </ul>
 </div>
