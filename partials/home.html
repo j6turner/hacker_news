@@ -1,5 +1,14 @@
 <h1>Hacker-News-Esque</h1>
 
+<div ng-show="links.length">
+  <h3>All Links (ranked by score)</h3>
+  <ul>
+    <li ng-repeat="item in links">
+      {{ item.title }} {{ "(" + item.url + ")" }}
+    </li>
+  </ul>
+</div>
+
 <div class "col-md-4">
   <h3>Add a new link</h3>
   <form ng-submit="LinksFactory.addLink()" class="form-inline" role="form">
