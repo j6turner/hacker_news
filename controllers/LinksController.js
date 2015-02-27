@@ -18,7 +18,8 @@ hackerNews.controller("LinksCtrl",
       url: $scope.linkURL,
       id: $scope.links.length + 1,
       upvotesCount: 0,
-      upvote: function() { ++(this.upvotesCount); },
+      upvote: function() { ++this.upvotesCount; },
+      rank: function() { return this.upvotesCount; },
       comments: []
     });
 
