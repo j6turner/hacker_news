@@ -9,8 +9,14 @@ hackerNews.controller("LinksCtrl",
       url: $scope.linkURL,
       id: $scope.links.length + 1,
       upvotesCount: 0,
+      createDateInMilliseconds: Date.now(),
       upvote: function() { ++this.upvotesCount; },
-      rank: function() { return this.upvotesCount; },
+      rank: function() {
+        var agingFactor =
+          (Date.now() - this.createDateInMilliseconds) /
+            (1000 * 60 * 60 * 24); // denominator === 'total # ms in 1 day'
+        return this.upvotesCount - agingFactor;
+      },
       comments: []
     });
 
