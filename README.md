@@ -1,6 +1,12 @@
-Hacker News
-============
+Hacker-News-Esque
+=================
 
+Maintains a ranked listing of popular web page links and
+related comments similar to the popular Hacker News app.
+All links are listed in descending order by a ranking
+method considering a.) the number of upvotes and b.) the
+elapsed time since the link was first posted to the
+Hacker-News-Esque app.
 
 
 Features include [AngularJS](https://angularjs.org/)
