@@ -6,7 +6,6 @@
     <li ng-repeat="item in links | orderBy:'rank()':true">
       {{ item.title }} {{ "(" + item.url + ")" }}
         <a ng-click="LinksFactory.findLinkByID(item.id).upvote()">upvote </a>
-        {{ item.upvotesCount }}
         <a ui-sref="comments({ linkId: item.id })">Add Comment</a>
         <a ng-click="deleteLink(item)">delete</a>
     </li>
