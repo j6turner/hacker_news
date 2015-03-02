@@ -1,1 +1,31 @@
+<h1>Hacker-News-Esque</h1>
+<hr #FF3300/>
 <h2> {{ link.title }} (Comments)</h2>
+
+<div class "left">
+  <div class "col-md-12"
+    <ul>
+      <ul ng-repeat="item in link.comments | orderBy:'rank()':true">
+        {{ item.comment }}
+        <a ng-click="LinksFactory.findLinkByID(item.id).upvote()">upvote</a>
+        <h4>by {{ item.name }}</h4>
+      </ul>
+    </ul>
+  </div>
+</div>
+
+<div class "right">
+  <div class "col-md-4"
+    <h3>Register a Comment</h3>
+    <form ng-submit="addComment()" class="form-inline" role="form" />
+      <div class="form-group">
+        <input type="text" ng-model="userName" class="form-control" placeholder="Hacker-News-Esque User Name" />
+        <br />
+        <textarea ng-model="comment" class="form-control" placeholder="Comment"></textarea>
+      </div>
+      <button ng-click="latestComment()" type="submit" class="btn btn-default btn-md">Add</button>
+    </form>
+  </div>
+</div>
+
+<a ui-sref="home">&#65513; Back</a>
