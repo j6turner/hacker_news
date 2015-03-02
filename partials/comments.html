@@ -2,30 +2,30 @@
 <hr #FF3300/>
 <h2> {{ link.title }} (Comments)</h2>
 
-<div class "left">
-  <div class "col-md-12"
-    <ul>
-      <ul ng-repeat="item in link.comments | orderBy:'rank()':true">
-        {{ item.comment }}
-        <a ng-click="LinksFactory.findLinkByID(item.id).upvote()">upvote</a>
-        <h4>by {{ item.name }}</h4>
-      </ul>
+<div class>
+
+  <ul>
+    <ul-comment ng-repeat="item in link.comments | orderBy:'rank()':true">
+      <h4>{{ item.comment }}</h4>
+      <h6>by <strong>{{ item.name }}</strong></h6>
+      <a ng-click="LinksFactory.findLinkByID(item.id).upvote()">upvote</a>
     </ul>
-  </div>
+  </ul>
+
+  <h3>Register a Comment</h3>
+  <form ng-submit="addComment()" class="form-inline" role="form" />
+    <div class="form-group">
+      <input type="text" ng-model="userName" class="form-control" cols="50" placeholder="Hacker-News-Esque User Name" autofocus="autofocus" />
+    </div>
+    <br />
+    <div class="form-group">
+      <textarea ng-model="comment" class="form-control" cols="50" rows="6" placeholder="Comment"></textarea>
+    </div>
+    <button ng-click="rank()" type="submit" class="btn btn-default btn-md">Add</button>
+  </form>
+
 </div>
 
-<div class "right">
-  <div class "col-md-4"
-    <h3>Register a Comment</h3>
-    <form ng-submit="addComment()" class="form-inline" role="form" />
-      <div class="form-group">
-        <input type="text" ng-model="userName" class="form-control" placeholder="Hacker-News-Esque User Name" />
-        <br />
-        <textarea ng-model="comment" class="form-control" placeholder="Comment"></textarea>
-      </div>
-      <button ng-click="latestComment()" type="submit" class="btn btn-default btn-md">Add</button>
-    </form>
-  </div>
-</div>
+<br />
 
 <a ui-sref="home">&#65513; Back</a>
